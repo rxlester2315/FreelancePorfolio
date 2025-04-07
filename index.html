@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rex Lester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                300: "#7dd3fc",
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+                900: "#0c4a6e",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .text-shadow {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .transition-all {
+          transition: all 0.3s ease;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-all duration-300"
+  >
+    <!-- Scroll to top button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Header -->
+    <header
+      class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50 shadow-sm"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-2xl font-bold text-primary-600 dark:text-[#8A2BE2]"
+          >Rex Lester</a
+        >
+
+        <div class="flex items-center gap-6">
+          <!-- Navigation -->
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+              <li>
+                <a
+                  href="#home"
+                  class="hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Dark Mode Toggle -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+          >
+            <svg
+              id="sun-icon"
+              class="w-5 h-5 hidden dark:block"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              id="moon-icon"
+              class="w-5 h-5 block dark:hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white dark:bg-gray-900 shadow-md"
+      >
+        <ul class="py-2 px-4 space-y-2">
+          <li>
+            <a
+              href="#home"
+              class="block py-2 hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block py-2 hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="block py-2 hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block py-2 hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-2 hover:text-primary-600 dark:hover:text-[#8A2BE2] transition-all"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center pt-16 bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    >
+      <div class="container mx-auto px-4 py-16">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-right">
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+            >
+              Hi, I'm
+              <span class="text-primary-600 dark:text-[#8A2BE2] text-shadow"
+                >Rex Lester</span
+              >
+            </h1>
+            <h2
+              class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600 dark:text-gray-400"
+            >
+              Freelance Developer & Designer
+            </h2>
+            <p class="text-lg mb-8 max-w-lg">
+              I create beautiful, functional, and user-friendly digital
+              experiences that help businesses grow and succeed.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                class="px-6 py-3 bg-[#8A2BE2] hover:bg-primary-700 text-white rounded-full transition-all shadow-lg hover:shadow-xl"
+              >
+                Hire Me
+              </a>
+              <a
+                href="#projects"
+                class="px-6 py-3 border border-[#8A2BE2] dark:border-[#8A2BE2] text-[#8A2BE2] dark:text-white hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] dark:hover:text-white rounded-full transition-all"
+              >
+                View My Work
+              </a>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center animate-fade-left">
+            <div
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl"
+            >
+              <img
+                src="me.png"
+                alt="Your Name"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <div class="w-20 h-1 bg-[#8A2BE2] mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2 animate-fade-right">
+            <img
+              src="m.jpg"
+              alt="About Me"
+              class="rounded-lg shadow-xl w-full"
+            />
+          </div>
+          <div class="md:w-1/2 animate-fade-left">
+            <h3 class="text-2xl font-bold mb-4">My Journey</h3>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p class="mb-6">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <h4 class="font-bold">Name:</h4>
+                <p>Rex Lester Bastaoang</p>
+              </div>
+              <div>
+                <h4 class="font-bold">Email:</h4>
+                <p>rexlesterbastaoang2002@gmail.com</p>
+              </div>
+              <div>
+                <h4 class="font-bold">Location:</h4>
+                <p>San Jose Del Monte Bulacan , Philippines</p>
+              </div>
+              <div>
+                <h4 class="font-bold">Availability:</h4>
+                <p>Freelance / Full-time</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+              >
+                <i class="fab fa-dribbble"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section - UPDATED -->
+    <section id="skills" class="py-20">
+      <div class="container mx-auto px-4">
+        <!-- Infinite Carousel -->
+        <div class="mt-12 mb-8 animate-fade-in">
+          <h3 class="text-xl font-bold text-center mb-8">
+            Technologies I Work With
+          </h3>
+          <div class="w-20 h-1 bg-[#8A2BE2] mx-auto"></div>
+
+          <div class="slider">
+            <div class="slide-track">
+              <!-- First set of logos -->
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="html5.svg" alt="HTML5" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="css_old.svg" alt="CSS3" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="javascript.svg" alt="JavaScript" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img
+                    src="tailwindcss-wordmark.svg"
+                    alt="Tailwind"
+                    class="max-h-16"
+                  />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="laravel.svg" alt="Laravel" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="csharp.svg" alt="C#" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img
+                    src="icons8-github-48.svg"
+                    alt="Git"
+                    class="max-h-16 w-[200px]"
+                  />
+                </div>
+              </div>
+
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img
+                    src="icons8-figma.svg"
+                    alt="Git"
+                    class="max-h-16 w-[200px]"
+                  />
+                </div>
+              </div>
+
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="html5.svg" alt="HTML5" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="css_old.svg" alt="CSS3" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="javascript.svg" alt="JavaScript" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img
+                    src="tailwindcss-wordmark.svg"
+                    alt="Tailwind"
+                    class="max-h-16"
+                  />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="laravel.svg" alt="Laravel" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img src="csharp.svg" alt="C#" class="max-h-16" />
+                </div>
+              </div>
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img
+                    src="icons8-github-48.svg"
+                    alt="Git"
+                    class="max-h-16 w-[200px]"
+                  />
+                </div>
+              </div>
+
+              <div class="slide">
+                <div
+                  class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md flex items-center justify-center h-32"
+                >
+                  <img
+                    src="icons8-figma.svg"
+                    alt="Git"
+                    class="max-h-16 w-[200px]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+            Hover over the carousel to pause the animation
+          </p>
+        </div>
+
+        <!-- Additional Skills -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+          <div class="w-20 h-1 bg-[#8A2BE2] mx-auto"></div>
+          <p class="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+            Check out some of my recent work
+          </p>
+        </div>
+
+        <!-- Project Filter -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-up">
+          <button
+            class="filter-btn active px-4 py-2 rounded-full bg-[#8A2BE2] text-white hover:bg-primary-700 transition-all"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-[#8A2BE2] hover:text-white transition-all"
+            data-filter="web"
+          >
+            Web Design
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-[#8A2BE2] hover:text-white transition-all"
+            data-filter="app"
+          >
+            App Development
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-[#8A2BE2] hover:text-white transition-all"
+            data-filter="ui"
+          >
+            UI/UX Design
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-grid"
+        >
+          <!-- Project Card -->
+          <div
+            class="project-item web bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all animate-fade-up"
+          >
+            <div class="relative overflow-hidden group">
+              <img
+                src="hospitalerp.png"
+                alt="Project 1"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-[#8A2BE2]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="text-white text-center p-4">
+                  <h3 class="text-xl font-bold mb-2">Hospital ERP System</h3>
+                  <p class="mb-4">
+                    Comprehensive Hospital ERP System for Managing All Processes
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#8A2BE2] transition-all"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Hospital ERP System</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Comprehensive Hospital ERP System for Managing All Processes
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div
+            class="project-item app bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all animate-fade-up"
+          >
+            <div class="relative overflow-hidden group">
+              <img
+                src="gym.png"
+                alt="Project 2"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-[#8A2BE2]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="text-white text-center p-4">
+                  <h3 class="text-xl font-bold mb-2">Fitness Goals System</h3>
+                  <p class="mb-4">
+                    Fitness Goals Web Application: Manage Memberships, Coaches,
+                    and Sessions
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#8A2BE2] transition-all"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Fitness Goals System</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Fitness Goals Web Application: Manage Memberships, Coaches, and
+                Sessions
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >React Native</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >Firebase</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div
+            class="project-item ui bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all animate-fade-up"
+          >
+            <div class="relative overflow-hidden group">
+              <img
+                src="cooking.png"
+                alt="Project 3"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-[#8A2BE2]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="text-white text-center p-4">
+                  <h3 class="text-xl font-bold mb-2">
+                    Cooking Recipes Web Application
+                  </h3>
+                  <p class="mb-4">
+                    Cooking Recipes Web Application: Order Raw Ingredients with
+                    Step-by-Step Guides
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#8A2BE2] transition-all"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Cooking Recipes Web Application
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Cooking Recipes Web Application: Order Raw Ingredients with
+                Step-by-Step Guides
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >Figma</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >Chart.js</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div
+            class="project-item web bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all animate-fade-up"
+          >
+            <div class="relative overflow-hidden group">
+              <img
+                src="smartAi.png"
+                alt="Project 4"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-[#8A2BE2]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="text-white text-center p-4">
+                  <h3 class="text-xl font-bold mb-2">
+                    Smart AI Budgeting Tool
+                  </h3>
+                  <p class="mb-4">
+                    Smart AI Budgeting System: Track Expenses, Set Goals, and
+                    Get Savings Insights
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#8A2BE2] transition-all"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Smart AI Budgeting Tool</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Smart AI Budgeting System: Track Expenses, Set Goals, and Get
+                Savings Insights
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div
+            class="project-item ui bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all animate-fade-up"
+          >
+            <div class="relative overflow-hidden group">
+              <img
+                src="/placeholder.svg?height=300&width=500"
+                alt="Project 5"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-[#8A2BE2]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="text-white text-center p-4">
+                  <h3 class="text-xl font-bold mb-2">UI Design System</h3>
+                  <p class="mb-4">
+                    A comprehensive design system for web applications
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#8A2BE2] transition-all"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">UI Design System</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                A comprehensive design system for web applications
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >Figma</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >Storybook</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div
+            class="project-item app bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all animate-fade-up"
+          >
+            <div class="relative overflow-hidden group">
+              <img
+                src="/placeholder.svg?height=300&width=500"
+                alt="Project 6"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-[#8A2BE2]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <div class="text-white text-center p-4">
+                  <h3 class="text-xl font-bold mb-2">Web Application</h3>
+                  <p class="mb-4">
+                    A project management tool with team collaboration features
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 border border-white rounded-full hover:bg-white hover:text-[#8A2BE2] transition-all"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Web Application</h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                A project management tool with team collaboration features
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full"
+                  >MongoDB</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <div class="w-20 h-1 bg-[#8A2BE2] mx-auto"></div>
+          <p class="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+            Have a project in mind? Let's work together!
+          </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2 animate-fade-right">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md">
+              <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i
+                      class="fas fa-map-marker-alt text-xl text-[#8A2BE2] dark:text-[#8A2BE2]"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold mb-1">Location</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      San Jose Del Monte, Bulacan, Philippines
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i
+                      class="fas fa-envelope text-xl text-[#8A2BE2] dark:text-[#8A2BE2]"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold mb-1">Email</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      rexlesterbastaoang2002@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i
+                      class="fas fa-phone-alt text-xl text-[#8A2BE2] dark:text-[#8A2BE2]"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold mb-1">Phone</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      +1 (123) 456-7890
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i
+                      class="fas fa-globe text-xl text-[#8A2BE2] dark:text-[#8A2BE2]"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold mb-1">Website</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      www.yourwebsite.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                <div class="flex gap-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#8A2BE2] hover:text-white dark:hover:bg-[#8A2BE2] transition-all"
+                  >
+                    <i class="fab fa-dribbble"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 animate-fade-left">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md">
+              <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+
+              <form id="contact-form">
+                <div class="mb-6">
+                  <label for="name" class="block text-sm font-medium mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] bg-white dark:bg-gray-900"
+                    required
+                  />
+                </div>
+
+                <div class="mb-6">
+                  <label for="email" class="block text-sm font-medium mb-2"
+                    >Your Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] bg-white dark:bg-gray-900"
+                    required
+                  />
+                </div>
+
+                <div class="mb-6">
+                  <label for="subject" class="block text-sm font-medium mb-2"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] bg-white dark:bg-gray-900"
+                    required
+                  />
+                </div>
+
+                <div class="mb-6">
+                  <label for="message" class="block text-sm font-medium mb-2"
+                    >Your Message</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="5"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8A2BE2] bg-white dark:bg-gray-900"
+                    required
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full py-3 px-6 border border-[#8A2BE2] hover:bg-[#8A2BE2] text-white rounded-lg transition-all shadow-lg hover:shadow-xl"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <a href="#" class="text-2xl font-bold text-[#8A2BE2]">Rex Lester</a>
+          </div>
+
+          <div class="mb-4 md:mb-0">
+            <ul class="flex space-x-6">
+              <li>
+                <a href="#home" class="hover:text-[#8A2BE2] transition-all"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-[#8A2BE2] transition-all"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#skills" class="hover:text-[#8A2BE2] transition-all"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="hover:text-[#8A2BE2] transition-all"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-[#8A2BE2] transition-all"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p>&copy; 2025 Rex Lester. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
